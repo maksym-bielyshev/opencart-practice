@@ -1,4 +1,3 @@
-import csv
 from _pytest.fixtures import FixtureRequest
 from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options

@@ -5,7 +5,6 @@ from selenium.webdriver import Remote
 from components import RegisterPageRightMenuComponent, LoginComponent
 from locators import LocatorsLoginPage
 from pages.base_page import BasePage
-from pages.register_page import RegisterPage
 
 
 class LoginPage(BasePage):
