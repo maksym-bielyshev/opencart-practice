@@ -9,7 +9,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from locators import LocatorsYourPersonalDetailsComponent, \
     LocatorsYourPasswordComponent, LocatorsNewsletterComponent, \
-    LocatorsPrivacyPolicyComponent, LocatorsShoppingCartButton
+    LocatorsPrivacyPolicyComponent, LocatorsShoppingCartButton, \
+    LocatorsRightMenuRegisterPage, LocatorsLoginComponent
 
 
 class InputFieldComponent:
@@ -274,3 +275,128 @@ class ShopCartDropdownComponent:
         :return: None
         """
         self._driver.find_element(*LocatorsShoppingCartButton.CHECKOUT).click()
+
+
+class RegisterPageRightMenuComponent:
+    """This class describes the right menu on register page."""
+
+    def __init__(self, driver: Remote) -> None:
+        """Initialise Right Menu Component on Register Page.
+        :param driver: Remote driver.
+        :return: None.
+        """
+        self._driver = driver
+        self._right_menu = driver.find_element_by_class_name('list-group')
+
+    def click_my_account(self) -> None:
+        """Click 'My account' link in right menu.
+        :return: None.
+        """
+        self._right_menu.find_element(
+            *LocatorsRightMenuRegisterPage.MY_ACCOUNT
+        ).click()
+
+    def click_address_book(self) -> None:
+        """Click 'Address book' link in right menu.
+        :return: None.
+        """
+        self._right_menu.find_element(
+            *LocatorsRightMenuRegisterPage.ADDRESS_BOOK
+        ).click()
+
+    def click_wish_list(self) -> None:
+        """Click 'Wish List' link in right menu.
+        :return: None.
+        """
+        self._right_menu.find_element(
+            *LocatorsRightMenuRegisterPage.WISH_LIST
+        ).click()
+
+    def click_order_history(self) -> None:
+        """Click 'Order history' link in right menu.
+        :return: None.
+        """
+        self._right_menu.find_element(
+            *LocatorsRightMenuRegisterPage.ORDER_HISTORY
+        ).click()
+
+    def click_downloads(self) -> None:
+        """Click 'Downloads' link in right menu.
+        :return: None.
+        """
+        self._right_menu.find_element(
+            *LocatorsRightMenuRegisterPage.DOWNLOADS
+        ).click()
+
+    def click_recurring_payments(self) -> None:
+        """Click 'Recurring payments' link in right menu.
+        :return: None.
+        """
+        self._right_menu.find_element(
+            *LocatorsRightMenuRegisterPage.RECURRING_PAYMENTS
+        ).click()
+
+    def click_reward_points(self) -> None:
+        """Click 'Reward points' link in right menu.
+        :return: None.
+        """
+        self._right_menu.find_element(
+            *LocatorsRightMenuRegisterPage.REWARD_POINTS
+        ).click()
+
+    def click_returns(self) -> None:
+        """Click 'Returns' link in right menu.
+        :return: None.
+        """
+        self._right_menu.find_element(
+            *LocatorsRightMenuRegisterPage.RETURNS
+        ).click()
+
+    def click_transactions(self) -> None:
+        """Click 'Transactions' link in right menu.
+        :return: None.
+        """
+        self._right_menu.find_element(
+            *LocatorsRightMenuRegisterPage.TRANSACTIONS
+        ).click()
+
+    def click_newsletter(self) -> None:
+        """Click 'Newsletter' link in right menu.
+        :return: None.
+        """
+        self._right_menu.find_element(
+            *LocatorsRightMenuRegisterPage.NEWSLETTER
+        ).click()
+
+
+class LoginComponent:
+    """Login component consists two fields: E-Mail Address and Password."""
+
+    def __init__(self, driver: Remote) -> None:
+        """Initialize input form fields.
+        :param driver: Remote
+        :return: None
+        """
+        self._driver = driver
+        self.email_field = InputFieldComponent(
+            self._driver,
+            LocatorsLoginComponent.EMAIL_INPUT
+        )
+        self.password_field = InputFieldComponent(
+            self._driver,
+            LocatorsLoginComponent.PASSWORD_INPUT
+        )
+
+    def click_forgotten_password(self) -> None:
+        """Click forgotten password button to restore password.
+        :return: None
+        """
+        self._driver.find_element(
+            *LocatorsLoginComponent.FORGOTTEN_PASSWORD_BUTTON
+        ).click()
+
+    def click_login_button(self) -> None:
+        """Click login button to return the user to the system.
+        :return: None
+        """
+        self._driver.find_element(*LocatorsLoginComponent.LOGIN_BUTTON).click()
