@@ -69,6 +69,7 @@ class LocatorsShoppingCartButton:
         '//ul[@class="dropdown-menu pull-right"]//li[2]//div//p//a[2]'
     )
 
+
 class LocatorsLoginPage:
     """Locators for 'Login' page."""
 
