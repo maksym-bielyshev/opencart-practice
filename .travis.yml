@@ -1,6 +1,6 @@
 language: python
 before_install:
-    - pip install pep8
+    - pip install flake8
 
 script:
-    - find . -name \*.py -exec pep8 {} +
+    - find . -name \*.py -exec flake8 {} +
