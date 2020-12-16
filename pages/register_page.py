@@ -2,9 +2,9 @@ from selenium.webdriver import Remote
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from pages.base_page import BasePage
-from components import YourPersonalDetailsComponent, YourPasswordComponent, \
+from ..components import YourPersonalDetailsComponent, YourPasswordComponent, \
     NewsletterComponent, PrivacyPolicyComponent
-from locators import LocatorsRegisterPage
+from ..locators import LocatorsRegisterPage
 
 
 class RegisterPage(BasePage):

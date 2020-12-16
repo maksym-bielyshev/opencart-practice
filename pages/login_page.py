@@ -19,12 +19,11 @@ class LoginPage(BasePage):
         self.right_menu = RegisterPageRightMenuComponent(self._driver)
         self.login_form = LoginComponent(self._driver)
 
-    def click_login_button(self) -> object:
-        """Click 'Login' button.
-
-        :return: page
+    def click_register_button(self) -> object:
+        """Click 'Register' button.
+        :return: RegisterPage object
         """
         self._driver.find_element(
-            *LocatorsLoginPage.LOGIN_BUTTON
+            *LocatorsLoginPage.REGISTER_PAGE_BUTTON
         ).click()
-        return LoginPage(self._driver)
+        return RegisterPage(self._driver)
