@@ -32,6 +32,7 @@ class InputFieldComponent:
 
     def _find_input_field(self) -> None:
         """Find input field by parent element or driver.
+
         :return: None
         """
         if self.parent_element:
@@ -45,6 +46,7 @@ class InputFieldComponent:
 
     def clear_and_fill_input_field(self, data: str) -> None:
         """Clear and fill input field with data.
+
         :param data: str
         :return: None
         """
@@ -58,6 +60,7 @@ class YourPersonalDetailsComponent:
 
     def __init__(self, driver: Remote, parent_element: WebElement) -> None:
         """Initialize input fields first name, last name, email, telephone.
+
         :param driver: Remote.
         :param parent_element: WebElement
         """
@@ -94,7 +97,7 @@ class YourPersonalDetailsComponent:
 
 
 class YourPasswordComponent:
-    """Your password form сonsists two fields to fill."""
+    """Your password form consists two fields to fill."""
 
     def __init__(self, driver: Remote, parent_element: WebElement) -> None:
         """Initialize input fields password field, password confirm field.
