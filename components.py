@@ -266,6 +266,6 @@ class ShopCartDropdownComponent:
 
     def click_checkout_link(self) -> None:
         """Click on the 'Checkout' link.
-        :return: None.
+        :return: None
         """
         self._driver.find_element(*LocatorsShoppingCartButton.CHECKOUT).click()
