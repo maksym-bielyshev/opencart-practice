@@ -3,4 +3,4 @@ before_install:
     - pip install flake8
 
 script:
-    - find . -name \*.py -exec flake8 {} +
+    - flake8
